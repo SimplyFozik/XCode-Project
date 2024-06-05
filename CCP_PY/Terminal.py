@@ -1,8 +1,1 @@
-
-def Main():
-    print("hello world!")
-
-
-
-
-#Main()
+#There`s nothing we can do.
