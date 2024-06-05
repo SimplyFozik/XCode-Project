@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\CrossCodeProject CCP\CCP_C++\x64\Debug\CCP_C++.exe</FullPath>
+      <FullPath>C:\CrossCodeProject\CCP_C++\x64\Debug\CCP_C++.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

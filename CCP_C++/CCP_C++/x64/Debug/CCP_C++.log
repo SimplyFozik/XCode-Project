@@ -1,5 +1,5 @@
 ﻿  CCP_C++.cpp
-C:\CrossCodeProject CCP\CCP_C++\CCP_C++\CCP_C++.cpp(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
-C:\CrossCodeProject CCP\CCP_C++\CCP_C++\Encrypt.h(53,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\CrossCodeProject CCP\CCP_C++\CCP_C++\CCP_C++.cpp(3,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
-  CCP_C++.vcxproj -> C:\CrossCodeProject CCP\CCP_C++\x64\Debug\CCP_C++.exe
+C:\CrossCodeProject\CCP_C++\CCP_C++\CCP_C++.cpp(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\CrossCodeProject\CCP_C++\CCP_C++\Encrypt.h(53,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\CrossCodeProject\CCP_C++\CCP_C++\CCP_C++.cpp(3,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  CCP_C++.vcxproj -> C:\CrossCodeProject\CCP_C++\x64\Debug\CCP_C++.exe
