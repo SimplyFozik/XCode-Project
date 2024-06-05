@@ -130,7 +130,7 @@
     <ClCompile Include="CCP_C++.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Descrypt.h" />
+    <ClInclude Include="Decrypt.h" />
     <ClInclude Include="Encrypt.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{FDA87411-C05C-490B-AB68-08FFF0858CEE}|CCP_C\u002B\u002B\\CCP_C\u002B\u002B.vcxproj|solutionrelative:CCP_C\u002B\u002B\\Encrypt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FDA87411-C05C-490B-AB68-08FFF0858CEE}|CCP_C\u002B\u002B\\CCP_C\u002B\u002B.vcxproj|C:\\CrossCodeProject\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B\\Descrypt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FDA87411-C05C-490B-AB68-08FFF0858CEE}|CCP_C\u002B\u002B\\CCP_C\u002B\u002B.vcxproj|solutionrelative:CCP_C\u002B\u002B\\Descrypt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FDA87411-C05C-490B-AB68-08FFF0858CEE}|CCP_C\u002B\u002B\\CCP_C\u002B\u002B.vcxproj|C:\\CrossCodeProject\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B\\Decrypt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FDA87411-C05C-490B-AB68-08FFF0858CEE}|CCP_C\u002B\u002B\\CCP_C\u002B\u002B.vcxproj|solutionrelative:CCP_C\u002B\u002B\\Decrypt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FDA87411-C05C-490B-AB68-08FFF0858CEE}|CCP_C\u002B\u002B\\CCP_C\u002B\u002B.vcxproj|C:\\CrossCodeProject\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "CCP_C\u002B\u002B\\Encrypt.h",
               "ToolTip": "C:\\CrossCodeProject\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B\\Encrypt.h",
               "RelativeToolTip": "CCP_C\u002B\u002B\\Encrypt.h",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAADkAAAAAAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAC0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-06-05T13:02:50.881Z",
               "EditorCaption": ""
@@ -40,14 +40,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Descrypt.h",
-              "DocumentMoniker": "C:\\CrossCodeProject\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B\\Descrypt.h",
-              "RelativeDocumentMoniker": "CCP_C\u002B\u002B\\Descrypt.h",
-              "ToolTip": "C:\\CrossCodeProject\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B\\Descrypt.h",
-              "RelativeToolTip": "CCP_C\u002B\u002B\\Descrypt.h",
+              "Title": "Decrypt.h",
+              "DocumentMoniker": "C:\\CrossCodeProject\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B\\Decrypt.h",
+              "RelativeDocumentMoniker": "CCP_C\u002B\u002B\\Decrypt.h",
+              "ToolTip": "C:\\CrossCodeProject\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B\\Decrypt.h",
+              "RelativeToolTip": "CCP_C\u002B\u002B\\Decrypt.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-05T13:02:41.725Z"
+              "WhenOpened": "2024-06-05T13:02:41.725Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -57,9 +58,10 @@
               "RelativeDocumentMoniker": "CCP_C\u002B\u002B\\CCP_C\u002B\u002B.cpp",
               "ToolTip": "C:\\CrossCodeProject\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B\\CCP_C\u002B\u002B.cpp",
               "RelativeToolTip": "CCP_C\u002B\u002B\\CCP_C\u002B\u002B.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-05T13:01:01.706Z"
+              "WhenOpened": "2024-06-05T13:01:01.706Z",
+              "EditorCaption": ""
             }
           ]
         },

@@ -43,7 +43,14 @@ void funcApply(int seed[],std::string text)
 	}
 	for (int i = 0; i < text.size(); i++)
 	{
-		enc_text += def_alph[funcGetIndex(text[i], new_alph)];
+		if (std::isalpha(text[i]))
+		{
+			enc_text += def_alph[funcGetIndex(text[i], new_alph)];
+		}
+		else
+		{
+			enc_text += text[i];
+		}
 	}
 	std::cout << enc_text;
 }

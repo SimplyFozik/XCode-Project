@@ -1,10 +1,10 @@
 ﻿#include <iostream>
 #include "Encrypt.h";
-#include "Descrypt.h";
+#include "Decrypt.h";
 
 int main()
 {
 	std::string text;
-	std::cin >> text;
+	std::getline(std::cin, text);
 	funcGenerateSeed(text);
 }
