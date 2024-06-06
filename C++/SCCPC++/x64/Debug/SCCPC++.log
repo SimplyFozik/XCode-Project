@@ -1,0 +1,4 @@
+﻿  SCCPC++.cpp
+E:\CPP\CrossCodeProject\C++\Libaries\Encrypt.h(60,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+E:\CPP\CrossCodeProject\C++\SCCPC++\SCCPC++.cpp(17): warning C4717: funcSendMessage: рекурсия на всех путях выполнения, функция вызовет переполнение стека
+  SCCPC++.vcxproj -> E:\CPP\CrossCodeProject\C++\SCCPC++\x64\Debug\SCCPC++.exe
