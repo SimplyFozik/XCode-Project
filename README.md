@@ -1,2 +1,2 @@
 # CrossCodeProject
-Ability to share information between spearate code launguages with encryption and descryption
+This project allows information to be shared between different code languages using encryption and decryption.
