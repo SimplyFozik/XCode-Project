@@ -10,22 +10,42 @@
 
 void funcSendMessage(SOCKET newConnection,std::string text)
 {
-	text = "";
 	std::getline(std::cin, text);
-	send(newConnection, funcGenerateSeed(text).c_str(), sizeof(text), NULL);
+	int msg_size = text.size();
+	send(newConnection, (char*)&msg_size, sizeof(int), NULL);
+	send(newConnection, funcGenerateSeed(text).c_str(), msg_size, NULL);
 	funcSendMessage(newConnection,text);
 }
 
-void funcWaitForAnwser(SOCKET Connection)
+void funcWaitForAnwser(SOCKET Connection, std::string text)
 {
-	char msg[256];
+	int msg_size;
+	std::string msg;
 	for (;;)
 	{
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-		recv(Connection, msg, sizeof(msg), NULL);
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
+		recv(Connection, (char*)&msg_size, sizeof(int), NULL);
+		char* msg = new char[msg_size + 1];
+		msg[msg_size] = '\0';
+		recv(Connection, msg, msg_size, NULL);
 		std::cout << msg << std::endl;
+		delete[] msg;
 	}
+	
 }
+
+//void funcCheckConnection(SOCKET Connection)
+//{
+//	if (Connection == 0)
+//	{
+//		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+//		exit(1);
+//	}
+//	else
+//	{
+//		funcCheckConnection(Connection);
+//	}
+//}
 
 int main(int argc, char* argv[])
 {
@@ -57,18 +77,16 @@ int main(int argc, char* argv[])
 	else
 	{
 		std::cout << "Client Connection - OK.\n";
-		std::string text;
-		std::thread th1(funcSendMessage,newConnection,text);
-		std::thread th2(funcWaitForAnwser,newConnection);
+		std::string text_out;
+		std::string text_in;
+		std::thread th1(funcSendMessage,newConnection,text_out);
+		std::thread th2(funcWaitForAnwser,newConnection,text_in);
+		/*std::thread th3(funcCheckConnection, newConnection);*/
+		th1.join();
+		th2.join();
+		/*th3.join();*/
 	}
 
 	system("pause");
 	return 0;
-
-	/*std::string text = "ANUUH WHOUS!";
-	int seed[26]{ 11,4,16,23,21,25,6,0,13,9,20,15,19,1,7,2,10,14,3,12,17,5,22,24,18,8 };
-	funcDecrypt(seed,text);
-	std::getline(std::cin, text);
-	funcGenerateSeed(text);
-	ANUUH WHOUS!*/
 }

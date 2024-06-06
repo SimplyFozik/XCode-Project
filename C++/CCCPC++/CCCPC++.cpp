@@ -8,24 +8,44 @@
 #pragma comment(lib,"ws2_32.lib")
 #pragma warning(disable: 4996)
 
-void funcSendMessage(SOCKET Connection, std::string text)
+void funcSendMessage(SOCKET newConnection, std::string text)
 {
-	text = "";
 	std::getline(std::cin, text);
-	send(Connection, funcGenerateSeed(text).c_str(), sizeof(text), NULL);
-	funcSendMessage(Connection, text);
+	int msg_size = text.size();
+	send(newConnection, (char*)&msg_size, sizeof(int), NULL);
+	send(newConnection, funcGenerateSeed(text).c_str(), msg_size, NULL);
+	funcSendMessage(newConnection, text);
 }
 
-void funcWaitForAnwser(SOCKET Connection)
+void funcWaitForAnwser(SOCKET Connection, std::string text)
 {
-	char msg[256];
+	int msg_size;
+	std::string msg;
 	for (;;)
 	{
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-		recv(Connection, msg, sizeof(msg), NULL);
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
+		recv(Connection, (char*)&msg_size, sizeof(int), NULL);
+		char* msg = new char[msg_size + 1];
+		msg[msg_size] = '\0';
+		recv(Connection, msg, msg_size, NULL);
 		std::cout << msg << std::endl;
+		delete[] msg;
 	}
+
 }
+
+//void funcCheckConnection(SOCKET Connection)
+//{
+//	if (Connection == 1)
+//	{
+//		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+//		exit(1);
+//	}
+//	else
+//	{
+//		funcCheckConnection(Connection);
+//	}
+//}
 
 int main(int argc, char* argv[])
 {
@@ -54,7 +74,11 @@ int main(int argc, char* argv[])
 		std::cout << "Server Connection - OK\n";
 		std::string text;
 		std::thread th1(funcSendMessage, Connection, text);
-		std::thread th2(funcWaitForAnwser, Connection);
+		std::thread th2(funcWaitForAnwser, Connection,text);
+		/*std::thread th3(funcCheckConnection, Connection);*/
+		th1.join();
+		th2.join();
+		/*th3.join();*/
 	}
 	
 }
