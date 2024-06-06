@@ -33,7 +33,7 @@ void funcDecrypt(int seed[], std::string text)
 	{
 		if (std::isalpha(text[i]))
 		{
-			enc_text += new_alph[funcGetIndexDecrypt(text[i], def_alph)];
+			enc_text += new_alph[funcGetIndexDecrypt(text[i], def_alph)];	
 		}
 		else
 		{
