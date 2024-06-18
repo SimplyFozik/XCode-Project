@@ -12,40 +12,52 @@ void funcSendMessage(SOCKET newConnection,std::string text)
 {
 	std::getline(std::cin, text);
 	int msg_size = text.size();
+	std::pair<std::string, std::string> result = funcGenerateSeed(text);
 	send(newConnection, (char*)&msg_size, sizeof(int), NULL);
-	send(newConnection, funcGenerateSeed(text).c_str(), msg_size, NULL);
+	send(newConnection, result.first.c_str(), msg_size, NULL);
+	send(newConnection, result.second.c_str(), result.second.size(), NULL);
 	funcSendMessage(newConnection,text);
 }
+
 
 void funcWaitForAnwser(SOCKET Connection, std::string text)
 {
 	int msg_size;
+	int counter = 0;
 	std::string msg;
 	for (;;)
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(10));
 		recv(Connection, (char*)&msg_size, sizeof(int), NULL);
 		char* msg = new char[msg_size + 1];
-		msg[msg_size] = '\0';
+		msg[msg_size] = '\0'; // Null terminate the string
 		recv(Connection, msg, msg_size, NULL);
 		std::cout << msg << std::endl;
+		char seed[145];
+		int intseed[52] = { 0 }; // Initialize the array
+		recv(Connection, seed, 145, NULL);
+		for (int i = 0; i < 145; i++)
+			if (isdigit(seed[i]))
+			{
+				for (; isdigit(seed[i]); i++)
+				{
+					if (intseed[counter] < 0)
+					{
+						intseed[counter] = seed[i] - '0';
+					}
+					else
+					{
+						intseed[counter] = (intseed[counter] * 10) + (seed[i] - '0');
+					}
+				}
+				i--;
+				counter++;
+			}
+		std::cout << funcDecrypt(intseed, text); // Assuming funcDecrypt is defined elsewhere
 		delete[] msg;
 	}
-	
 }
 
-//void funcCheckConnection(SOCKET Connection)
-//{
-//	if (Connection == 0)
-//	{
-//		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-//		exit(1);
-//	}
-//	else
-//	{
-//		funcCheckConnection(Connection);
-//	}
-//}
 
 int main(int argc, char* argv[])
 {

@@ -20,10 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Decrypt.h">
+    <ClInclude Include="..\Libaries\Decrypt.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Encrypt.h">
+    <ClInclude Include="..\Libaries\Encrypt.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
