@@ -20,6 +20,7 @@ void funcSendMessage(SOCKET newConnection)
 		
 		send(newConnection, (char*)&msg_size, sizeof(int), NULL);
 		send(newConnection, result.first.c_str(), msg_size, NULL);
+		Sleep(10);
 		send(newConnection, result.second.c_str(), 145, NULL);
 		Sleep(10);
 	}
@@ -127,6 +128,7 @@ int main(int argc, char* argv[])
 		/*th3.join();*/
 	}
 
+	WSACleanup();
 	system("pause");
 	return 0;
 }

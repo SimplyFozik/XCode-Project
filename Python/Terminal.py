@@ -1,10 +1,42 @@
-<<<<<<< HEAD
+import socket
 import Encrypt
 import Decrypt
+import threading
 
-#seed = [13,21,15,23,12,10,22,5,1,19,3,8,6,2,24,20,0,7,18,16,17,25,9,4,11,14]
-#print(Decrypt.funcDecrypt(seed,"FGIIL MLHIE!"))
-#print(Encrypt.funcGenerateSeed("HELLO"))
-=======
-#There`s nothing we can do.
->>>>>>> 2d51d5c3a1c064d67cdb6a4fd7d5df3c848a4472
+socketServer = socket.socket()
+serverHost = socket.gethostname()
+port = 1111
+localIP = '127.0.0.1'
+
+socketServer.connect((localIP, port))
+
+
+def funcSendMessages():
+    while (True):
+        print("hello")
+    
+
+def funcWaitForAnswer():
+    while True:
+        msg_size_bytes = socketServer.recv(4)  # Receive message size (4 bytes)
+        msg_size = int.from_bytes(msg_size_bytes, byteorder='big')  # Convert bytes to integer
+        msg = socketServer.recv(msg_size).decode()  # Receive the message based on msg_size
+        seed = socketServer.recv(145).decode()  # Receive the seed
+
+        dec_msg = Decrypt.funcDecrypt(seed,msg)
+
+        print(f"Received message: {msg}")
+        print(f"Received seed: {seed}")
+        print(f"Decrypted Message: {dec_msg}")
+
+
+thread1 = threading.Thread(target=funcWaitForAnswer, name="Thread1")
+#thread2 = threading.Thread(target=funcSendMessages, name="Thread2")
+
+
+thread1.start()
+#thread2.start()
+
+
+thread1.join()
+#thread2.join()

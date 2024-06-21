@@ -5,6 +5,12 @@
     {
       "AbsoluteMoniker": "D:0:0:{B3FD07D1-A93A-4720-9E64-D7666B65732B}|SCCPC\u002B\u002B.vcxproj|C:\\CrossCodeProject\\C\u002B\u002B\\SCCPC\u002B\u002B\\SCCPC\u002B\u002B.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B3FD07D1-A93A-4720-9E64-D7666B65732B}|SCCPC\u002B\u002B.vcxproj|solutionrelative:SCCPC\u002B\u002B.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD07D1-A93A-4720-9E64-D7666B65732B}|SCCPC\u002B\u002B.vcxproj|C:\\CrossCodeProject\\C\u002B\u002B\\Libaries\\Encrypt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD07D1-A93A-4720-9E64-D7666B65732B}|SCCPC\u002B\u002B.vcxproj|C:\\CrossCodeProject\\C\u002B\u002B\\Libaries\\Decrypt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +20,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Encrypt.h",
+              "DocumentMoniker": "C:\\CrossCodeProject\\C\u002B\u002B\\Libaries\\Encrypt.h",
+              "RelativeDocumentMoniker": "..\\Libaries\\Encrypt.h",
+              "ToolTip": "C:\\CrossCodeProject\\C\u002B\u002B\\Libaries\\Encrypt.h",
+              "RelativeToolTip": "..\\Libaries\\Encrypt.h",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAD0AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-21T18:28:13.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Decrypt.h",
+              "DocumentMoniker": "C:\\CrossCodeProject\\C\u002B\u002B\\Libaries\\Decrypt.h",
+              "RelativeDocumentMoniker": "..\\Libaries\\Decrypt.h",
+              "ToolTip": "C:\\CrossCodeProject\\C\u002B\u002B\\Libaries\\Decrypt.h",
+              "RelativeToolTip": "..\\Libaries\\Decrypt.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-21T18:28:12.785Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +54,7 @@
               "RelativeDocumentMoniker": "SCCPC\u002B\u002B.cpp",
               "ToolTip": "C:\\CrossCodeProject\\C\u002B\u002B\\SCCPC\u002B\u002B\\SCCPC\u002B\u002B.cpp",
               "RelativeToolTip": "SCCPC\u002B\u002B.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAFAAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-21T15:54:04.292Z",
               "EditorCaption": ""
