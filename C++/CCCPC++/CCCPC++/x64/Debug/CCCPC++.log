@@ -1,6 +1,4 @@
 ﻿  CCCPC++.cpp
 C:\CrossCodeProject\C++\Libaries\Encrypt.h(61,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
 C:\CrossCodeProject\C++\CCCPC++\CCCPC++.cpp(18,16): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\CrossCodeProject\C++\CCCPC++\CCCPC++.cpp(22,62): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\CrossCodeProject\C++\CCCPC++\CCCPC++.cpp(23,64): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
   CCCPC++.vcxproj -> C:\CrossCodeProject\C++\CCCPC++\x64\Debug\CCCPC++.exe

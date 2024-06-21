@@ -26,7 +26,7 @@
     <ClInclude Include="..\Libaries\Encrypt.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="..\Libaries\Shared.h">
+    <ClInclude Include="..\Debug\Debug.cpp">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

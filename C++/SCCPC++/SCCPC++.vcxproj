@@ -134,9 +134,9 @@
     <ClCompile Include="SCCPC++.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Debug\Debug.cpp" />
     <ClInclude Include="..\Libaries\Decrypt.h" />
     <ClInclude Include="..\Libaries\Encrypt.h" />
-    <ClInclude Include="..\Libaries\Shared.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -134,6 +134,7 @@
     <ClCompile Include="CCCPC++.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Debug\Debug.h" />
     <ClInclude Include="..\Libaries\Decrypt.h" />
     <ClInclude Include="..\Libaries\Encrypt.h" />
   </ItemGroup>

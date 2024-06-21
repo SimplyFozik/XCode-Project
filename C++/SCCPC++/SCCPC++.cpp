@@ -5,31 +5,30 @@
 #include <chrono>
 #include <Encrypt.h>
 #include <Decrypt.h>
-#include <Shared.h>
 #pragma comment(lib,"ws2_32.lib")
 #pragma warning(disable: 4996)
 
 void funcSendMessage(SOCKET newConnection)
 {
-	for (;;)
+	while (true)
 	{	
-		std::string text = "";
+		std::string text;
 		std::getline(std::cin, text);
 		
 		int msg_size = text.size();
 		std::pair<std::string, std::string> result = funcGenerateSeed(text);
 		
 		send(newConnection, (char*)&msg_size, sizeof(int), NULL);
-		send(newConnection, result.first.c_str(), result.first.size(), NULL);
-		send(newConnection, result.second.c_str(), result.second.size(), NULL);
+		send(newConnection, result.first.c_str(), msg_size, NULL);
+		send(newConnection, result.second.c_str(), 145, NULL);
+		Sleep(10);
 	}
-	
 }
 
 
 void funcWaitForAnwser(SOCKET Connection)
 {
-	for (;;)
+	while (true)
 	{
 		unsigned short msg_size = 0;
 		unsigned short Recieved = recv(Connection, (char*)&msg_size, sizeof(int), NULL);
@@ -83,7 +82,8 @@ void funcWaitForAnwser(SOCKET Connection)
 		std::string decryptedMessage = funcDecrypt(intseed, msg);
 		std::cout << decryptedMessage << std::endl;
 		
-		delete[] msg; // Clear
+		// Clear variables.
+		delete[] msg;
 	}
 }
 
