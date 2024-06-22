@@ -5,10 +5,31 @@
 #include <chrono>
 #include <Encrypt.h>
 #include <Decrypt.h>
+#include <Shared.h>
 #pragma comment(lib,"ws2_32.lib")
 #pragma warning(disable: 4996)
 
-void funcSendMessage(SOCKET newConnection)
+SOCKET Connections[100];
+int Counter = 0;
+const unsigned short index = 1;
+
+unsigned short Cpp_Connectons[100]; // 1
+unsigned short Cpp_TopConnection = 0;
+
+unsigned short Cs_Connections[100]; // 2
+unsigned short Cs_TopConnections = 0;
+
+unsigned short Py_Connections[100]; // 3
+unsigned short Py_TopConnection = 0;
+
+unsigned short Java_Connections[100]; // 4
+unsigned short Java_TopConnections = 0;
+
+unsigned short Lua_Connections[100]; // 5
+unsigned short Lua_TopConnections = 0;
+
+
+void funcSendMessage(int index)
 {
 	while (true)
 	{	
@@ -18,10 +39,10 @@ void funcSendMessage(SOCKET newConnection)
 		int msg_size = text.size();
 		std::pair<std::string, std::string> result = funcGenerateSeed(text);
 		
-		send(newConnection, (char*)&msg_size, sizeof(int), NULL);
-		send(newConnection, result.first.c_str(), msg_size, NULL);
+		send(Connections[index], (char*)&msg_size, sizeof(int), NULL);
+		send(Connections[index], result.first.c_str(), msg_size, NULL);
 		Sleep(10);
-		send(newConnection, result.second.c_str(), 145, NULL);
+		send(Connections[index], result.second.c_str(), 145, NULL);
 		Sleep(10);
 	}
 }
@@ -111,24 +132,62 @@ int main(int argc, char* argv[])
 	listen(sListen, SOMAXCONN);
 
 	SOCKET newConnection;
-	newConnection = accept(sListen, (SOCKADDR*)&addr, &sizeofaddr);
-
-	if (newConnection == 0)
+	for (int i = 0; i < 100; i++)
 	{
-		std::cout << "Error #2\n";
-	}
-	else
-	{
-		std::cout << "Client Connection - OK.\n";
-		std::thread th1(funcSendMessage,newConnection);
-		std::thread th2(funcWaitForAnwser,newConnection);
-		/*std::thread th3(funcCheckConnection, newConnection);*/
-		th1.join();
-		th2.join();
-		/*th3.join();*/
+		newConnection = accept(sListen, (SOCKADDR*)&addr, &sizeofaddr);
+		
+
+		if (newConnection == 0)
+		{
+			std::cout << "Error #2\n";
+		}
+		else
+		{
+			Connections[i] = newConnection;
+			
+			int connection_index = 0;
+			recv(Connections[i], (char*)&connection_index, sizeof(int), NULL);
+			
+			Counter++;
+
+			switch (index)
+			{
+			case 1:
+				std::cout << '#' << Cpp_TopConnection << " C++ client connected!\n";
+				Cpp_Connectons[Cpp_TopConnection] = Counter;
+				Cpp_TopConnection++;
+				break;
+			case 2:
+				std::cout << '#' << Cs_TopConnections << " C# client connected!\n";
+				Cs_Connections[Cs_TopConnections] = Counter;
+				Cs_TopConnections++;
+				break;
+			case 3:
+				std::cout << '#' << Py_TopConnection << " Python client connected!\n";
+				Py_Connections[Py_TopConnection] = Counter;
+				Py_TopConnection++;
+				break;
+			case 4:
+				std::cout << '#'<< Java_TopConnections << " Java client connected!\n";
+				Java_Connections[Java_TopConnections] = Counter;
+				Java_TopConnections++;
+				break;
+			case 5:
+				std::cout << '#' << Lua_TopConnections << " Lua client connected!\n";
+				Lua_Connections[Lua_TopConnections] = Counter;
+				Lua_TopConnections++;
+				break;
+			}
+			
+			
+			// MultiThreading
+			//CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)funcWaitForAnwser, (LPVOID)(i), NULL, NULL);
+			//CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)funcSendMessage, (LPVOID)(i), NULL, NULL);
+		}
 	}
 
-	WSACleanup();
 	system("pause");
 	return 0;
 }
+
+// Press [F] Fozik.

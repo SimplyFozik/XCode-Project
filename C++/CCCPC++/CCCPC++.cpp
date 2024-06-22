@@ -8,6 +8,9 @@
 #pragma comment(lib,"ws2_32.lib")
 #pragma warning(disable: 4996)
 
+SOCKET Connection;
+int index = 1;
+
 void funcSendMessage(SOCKET newConnection)
 {
 	while (true)
@@ -103,7 +106,8 @@ int main(int argc, char* argv[])
 	addr.sin_port = htons(1111);
 	addr.sin_family = AF_INET;
 
-	SOCKET Connection = socket(AF_INET, SOCK_STREAM, NULL);
+	Connection = socket(AF_INET, SOCK_STREAM, NULL);
+	
 	if (connect(Connection, (SOCKADDR*)&addr, sizeof(addr)) != 0)
 	{
 		std::cout << "Error: failed connect to server.\n";
@@ -111,13 +115,13 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
+		send(Connection, (char*)&index, 1, NULL); // Send Index.
 		std::cout << "Server Connection - OK\n";
-		std::thread th1(funcSendMessage, Connection);
-		std::thread th2(funcWaitForAnwser, Connection);
-		/*std::thread th3(funcCheckConnection, Connection);*/
-		th1.join();
-		th2.join();
-		/*th3.join();*/
+		
+		//CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)funcWaitForAnwser, NULL, NULL, NULL);
+		//CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)funcSendMessage, NULL, NULL, NULL);
 	}
 	
 }
+
+// Press [F] Fozik.
