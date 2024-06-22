@@ -17,9 +17,6 @@ std::string getRecieverByCode(int index)
 	case 4:
 		return "Java";
 		break;
-	case 5:
-		return "Lua";
-		break;
 	default:
 		return "Undefined";
 		break;
