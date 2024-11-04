@@ -1,0 +1,6 @@
+﻿  ClientC++.cpp
+Y:\source\repos\XCode-Project\C++\XCodeC++\Shared\Encrypt.h(61,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  (компиляция исходного файла "ClientC++.cpp")
+  
+Y:\source\repos\XCode-Project\C++\XCodeC++\ClientC++\ClientC++\ClientC++.cpp(21,16): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  ClientC++.vcxproj -> Y:\source\repos\XCode-Project\C++\XCodeC++\ClientC++\x64\Debug\ClientC++.exe
