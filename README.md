@@ -2,22 +2,33 @@
 This _"project"_ allows information to be shared between different code languages using encryption and decryption.
 
 > [!WARNING]
-> This project is **still in _Beta_**<br>
+> This project is **still in _Alpha_ version**<br>
 > expect many _errors_ and _bugs_ :trollface:
 
 #
 
-### Languages
-- [X] C++ (Server & Client)
-- [X] Python (Only Client-Side)
+### Reworked Languages (_Release_)
+- [ ] C++ (Server & Client)
+- [ ] Python (Only Client-Side)
 - [ ] Java (Only Client-Side)
-### TODO
+### (_Alpha_) Languages
+- [X] C++ (Server & Client) // On _Rework_ (_Release_)
+- [X] Python (Only Client-Side) // On _Rework_ (_Release_)
+- [ ] Lua (Only Client-Side) // **Canceled.**
+- [ ] C# (Only Client-Side) // **Canceled.**
+- [ ] Java (Only Client-Side) // Will be in _Release_
+### TODO List
+- [ ] Rewrite C++ & Python Languages
 - [ ] Make Java Client-Side
 - [ ] Rewrite Decryption & Encryption
 - [ ] Fix All Bugs
+- [ ] Rewrite Wiki
+- [ ] Make Release
 
 #
 
 ### Contributors
 `Creator & Main Developer` / [*SimplyFozik*](https://github.com/SimplyFozik)<br>
 `Java Idea` / [*Konstantin Shemyakin*](https://github.com/KonstantinShemyakin)<br>
+
+> Written by Fozik at 04.11.2024
