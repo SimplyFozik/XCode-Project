@@ -5,6 +5,10 @@ This "_project_" allows information to be shared between different code language
 > This project is **still in _Alpha_ version**<br>
 > expect many _errors_ and _bugs_ :trollface:
 
+> [!CAUTION]
+> The wiki is out of date because it hasn't been updated yet.<br>
+> *avoid using it!*
+
 #
 
 ### Reworked Languages (_Release_)
