@@ -19,5 +19,5 @@ This _"project"_ allows information to be shared between different code language
 #
 
 ### Contributors
-[*SimplyFozik*](https://github.com/SimplyFozik)<br>
-[*Konstantin Shemyakin*](https://github.com/KonstantinShemyakin)<br>
+`Creator & Main Developer` / [*SimplyFozik*](https://github.com/SimplyFozik)<br>
+`Java Idea` / [*Konstantin Shemyakin*](https://github.com/KonstantinShemyakin)<br>
