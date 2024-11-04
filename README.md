@@ -1,5 +1,5 @@
 # XCode-Project 💻
-This _"project"_ allows information to be shared between different code languages using encryption and decryption.
+This "_project_" allows information to be shared between different code languages using _TCP/IP_ protocols with encryption and decryption.
 
 > [!WARNING]
 > This project is **still in _Alpha_ version**<br>
